@@ -1,12 +1,21 @@
+# -*- encoding: utf-8 -*-
 source 'https://rubygems.org'
 
-gem 'berkshelf',  '~> 2.0'
-gem 'chefspec',   '~> 3.0'
-gem 'foodcritic', '~> 3.0'
-gem 'rubocop',    '~> 0.12'
+group :test do
+  gem 'berkshelf', '~> 3.1'
+  gem 'chefspec', '~> 4.2'
+  gem 'foodcritic', '~> 4.0.0'
+  gem 'rake', '>= 10.2'
+  gem 'rubocop', '= 0.28.0'
+end
 
 group :integration do
-  gem 'test-kitchen',    '~> 1.0.0.beta'
-  gem 'kitchen-vagrant', '~> 0.11'
-  gem 'vagrant-wrapper', '~> 1.2'
+  gem 'guard', '>= 2.6'
+  gem 'guard-foodcritic', '~> 1.0.3'
+  gem 'guard-kitchen'
+  gem 'guard-rspec'
+  gem 'guard-rubocop', '>= 1.1'
+  gem 'kitchen-vagrant'
+  gem 'test-kitchen', '~> 1.2.0'
+  gem 'travis-lint'
 end
